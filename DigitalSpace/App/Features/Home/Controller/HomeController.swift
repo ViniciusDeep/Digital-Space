@@ -13,6 +13,16 @@ class HomeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Digital Space"
+        
+        Service<[Category]>().get(url: "https://cdn.joyjet.com/tech-interview/mobile-test-one.json") { (result) in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let categories):
+                print(categories)
+            }
+        }
+        
         // Do any additional setup after loading the view.
     }
 
