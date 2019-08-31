@@ -11,9 +11,18 @@ import UIKit
 class CategoryViewCell: UITableViewCell, ConfigurableView {
     
     
+//    var items: [Item]! {
+//        didSet {
+//            collectionViewController = ItemsController(items: items)
+//        }
+//    }
+    
+    var collectionViewController = ItemsController()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        buildViewHierarchy()
+        setupConstraints()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -21,11 +30,11 @@ class CategoryViewCell: UITableViewCell, ConfigurableView {
     }
     
     func buildViewHierarchy() {
-        
+        addSubviews([collectionViewController.view])
     }
     
     func setupConstraints() {
-        
+        collectionViewController.view.cBuild(make: .fillSuperview)
     }
 }
 

@@ -16,17 +16,24 @@ class HomeController: UITableViewController {
         super.viewDidLoad()
         navigationItem.title = "Digital Space"
         setupTableView()
+        setupNavigation()
         bindViewModel()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
     }
     
     fileprivate func bindViewModel() {
         categoryViewModel.fetchCategories { (categories) in
-            
             self.categoryViewModel.categories = categories
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    @objc func didReceiveMenu() {
+        print("Toogle Menu")
     }
 }
 
