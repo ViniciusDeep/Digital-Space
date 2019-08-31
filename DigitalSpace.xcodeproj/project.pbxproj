@@ -19,6 +19,11 @@
 		795DD236231A099600A2BEA3 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DD235231A099600A2BEA3 /* Service.swift */; };
 		795DD238231A0C1200A2BEA3 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DD237231A0C1200A2BEA3 /* Category.swift */; };
 		795DD23A231A0DDA00A2BEA3 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DD239231A0DDA00A2BEA3 /* Item.swift */; };
+		795DD23D231A100D00A2BEA3 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DD23C231A100D00A2BEA3 /* CategoryViewModel.swift */; };
+		795DD23F231A113200A2BEA3 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DD23E231A113200A2BEA3 /* Repository.swift */; };
+		795DD241231A160100A2BEA3 /* Home+TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DD240231A160100A2BEA3 /* Home+TableViewController.swift */; };
+		795DD243231AAAB600A2BEA3 /* CategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DD242231AAAB600A2BEA3 /* CategoryViewCell.swift */; };
+		795DD245231AAB6900A2BEA3 /* CategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DD244231AAB6900A2BEA3 /* CategoryHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +53,11 @@
 		795DD235231A099600A2BEA3 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		795DD237231A0C1200A2BEA3 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		795DD239231A0DDA00A2BEA3 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		795DD23C231A100D00A2BEA3 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		795DD23E231A113200A2BEA3 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		795DD240231A160100A2BEA3 /* Home+TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home+TableViewController.swift"; sourceTree = "<group>"; };
+		795DD242231AAAB600A2BEA3 /* CategoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewCell.swift; sourceTree = "<group>"; };
+		795DD244231AAB6900A2BEA3 /* CategoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +167,7 @@
 		795DD227231A067A00A2BEA3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				795DD23B231A0FF000A2BEA3 /* Definer */,
 				795DD229231A068B00A2BEA3 /* Controller */,
 				795DD228231A068600A2BEA3 /* View */,
 			);
@@ -166,6 +177,8 @@
 		795DD228231A068600A2BEA3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				795DD242231AAAB600A2BEA3 /* CategoryViewCell.swift */,
+				795DD244231AAB6900A2BEA3 /* CategoryHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -174,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				795DD202231A03C100A2BEA3 /* HomeController.swift */,
+				795DD240231A160100A2BEA3 /* Home+TableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -216,6 +230,15 @@
 			children = (
 			);
 			path = Persistence;
+			sourceTree = "<group>";
+		};
+		795DD23B231A0FF000A2BEA3 /* Definer */ = {
+			isa = PBXGroup;
+			children = (
+				795DD23C231A100D00A2BEA3 /* CategoryViewModel.swift */,
+				795DD23E231A113200A2BEA3 /* Repository.swift */,
+			);
+			path = Definer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,10 +343,15 @@
 			files = (
 				795DD203231A03C100A2BEA3 /* HomeController.swift in Sources */,
 				795DD23A231A0DDA00A2BEA3 /* Item.swift in Sources */,
+				795DD23D231A100D00A2BEA3 /* CategoryViewModel.swift in Sources */,
 				795DD236231A099600A2BEA3 /* Service.swift in Sources */,
 				795DD22C231A084D00A2BEA3 /* ConfigurableView.swift in Sources */,
+				795DD23F231A113200A2BEA3 /* Repository.swift in Sources */,
+				795DD243231AAAB600A2BEA3 /* CategoryViewCell.swift in Sources */,
+				795DD245231AAB6900A2BEA3 /* CategoryHeaderView.swift in Sources */,
 				795DD201231A03C100A2BEA3 /* AppDelegate.swift in Sources */,
 				795DD232231A08BD00A2BEA3 /* CBuilder.swift in Sources */,
+				795DD241231A160100A2BEA3 /* Home+TableViewController.swift in Sources */,
 				795DD234231A08C900A2BEA3 /* LayoutAnchor.swift in Sources */,
 				795DD226231A050400A2BEA3 /* Constructor.swift in Sources */,
 				795DD238231A0C1200A2BEA3 /* Category.swift in Sources */,

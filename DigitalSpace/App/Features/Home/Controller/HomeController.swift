@@ -8,24 +8,25 @@
 
 import UIKit
 
-class HomeController: UIViewController {
+class HomeController: UITableViewController {
 
+    var categoryViewModel = CategoryViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Digital Space"
-        
-        Service<[Category]>().get(url: "https://cdn.joyjet.com/tech-interview/mobile-test-one.json") { (result) in
-            switch result {
-            case .failure(let error):
-                print(error)
-            case .success(let categories):
-                print(categories)
+        setupTableView()
+        bindViewModel()
+    }
+    
+    fileprivate func bindViewModel() {
+        categoryViewModel.fetchCategories { (categories) in
+            
+            self.categoryViewModel.categories = categories
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
         }
-        
-        // Do any additional setup after loading the view.
     }
-
-
 }
 
