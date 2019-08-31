@@ -23,7 +23,7 @@ struct Constructor: ConfigurableConstructor {
     
     mutating func setupConstructor() {
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UINavigationController(rootViewController: ViewController())
+        window?.rootViewController = UINavigationController(rootViewController: HomeController())
         window?.makeKeyAndVisible()
     }
 }
