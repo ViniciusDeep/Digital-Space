@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol InternalHeaderViewDelegate: class {
+    func didBackButtonTapped()
+    func didStarTapped()
+}
+
 class InternalHeaderView: UIView, ConfigurableView {
     
     let imageBanner: UIImageView = {
@@ -30,6 +35,24 @@ class InternalHeaderView: UIView, ConfigurableView {
         return label
     }()
     
+    lazy var starItem: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "ic_star"), for: .normal)
+        button.addTarget(self, action: #selector(didStarTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    
+    lazy var backButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "ic_back"), for: .normal)
+        button.addTarget(self, action: #selector(didBackButtonTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    
+    weak var delegate: InternalHeaderViewDelegate?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
@@ -42,7 +65,7 @@ class InternalHeaderView: UIView, ConfigurableView {
     }
     
     func buildViewHierarchy() {
-        addSubviews([imageBanner, title, descriptionItem])
+        addSubviews([imageBanner, title, descriptionItem, starItem, backButton])
     }
     
     func setupConstraints() {
@@ -63,6 +86,25 @@ class InternalHeaderView: UIView, ConfigurableView {
             make.leading.equal(to: title.leadingAnchor)
         }
         
+        starItem.cBuilder { (make) in
+            make.top.equal(to: imageBanner.topAnchor, offsetBy: 20)
+            make.trailing.equal(to: imageBanner.trailingAnchor, offsetBy: -15)
+        }
+        
+        backButton.cBuilder { (make) in
+            make.top.equal(to: starItem.topAnchor)
+            make.leading.equal(to: imageBanner.leadingAnchor, offsetBy: 15)
+        }
+        
     }
     
+}
+
+extension InternalHeaderView {
+    @objc func didBackButtonTapped() {
+        delegate?.didBackButtonTapped()
+    }
+    @objc func didStarTapped() {
+        delegate?.didStarTapped()
+    }
 }

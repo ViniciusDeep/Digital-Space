@@ -28,6 +28,7 @@ extension InternalController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = InternalHeaderView()
+        headerView.delegate = self
         return headerView
     }
     
@@ -46,4 +47,14 @@ extension InternalController {
     }
     
     
+}
+
+extension InternalController: InternalHeaderViewDelegate {
+    func didBackButtonTapped() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func didStarTapped() {
+        //Action Here
+    }
 }
