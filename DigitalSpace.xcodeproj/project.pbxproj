@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		795DD201231A03C100A2BEA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DD200231A03C100A2BEA3 /* AppDelegate.swift */; };
 		795DD203231A03C100A2BEA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DD202231A03C100A2BEA3 /* ViewController.swift */; };
-		795DD206231A03C100A2BEA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 795DD204231A03C100A2BEA3 /* Main.storyboard */; };
 		795DD208231A03C300A2BEA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 795DD207231A03C300A2BEA3 /* Assets.xcassets */; };
 		795DD20B231A03C300A2BEA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 795DD209231A03C300A2BEA3 /* LaunchScreen.storyboard */; };
 		795DD216231A03C300A2BEA3 /* DigitalSpaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DD215231A03C300A2BEA3 /* DigitalSpaceTests.swift */; };
+		795DD226231A050400A2BEA3 /* Constructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DD225231A050400A2BEA3 /* Constructor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +29,13 @@
 		795DD1FD231A03C100A2BEA3 /* DigitalSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitalSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		795DD200231A03C100A2BEA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		795DD202231A03C100A2BEA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		795DD205231A03C100A2BEA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		795DD207231A03C300A2BEA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		795DD20A231A03C300A2BEA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		795DD20C231A03C300A2BEA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		795DD211231A03C300A2BEA3 /* DigitalSpaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DigitalSpaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		795DD215231A03C300A2BEA3 /* DigitalSpaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalSpaceTests.swift; sourceTree = "<group>"; };
 		795DD217231A03C300A2BEA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		795DD225231A050400A2BEA3 /* Constructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constructor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +77,10 @@
 		795DD1FF231A03C100A2BEA3 /* DigitalSpace */ = {
 			isa = PBXGroup;
 			children = (
-				795DD200231A03C100A2BEA3 /* AppDelegate.swift */,
+				795DD224231A04CF00A2BEA3 /* App */,
+				795DD221231A048C00A2BEA3 /* Entities */,
+				795DD220231A03E500A2BEA3 /* Plugins */,
 				795DD202231A03C100A2BEA3 /* ViewController.swift */,
-				795DD204231A03C100A2BEA3 /* Main.storyboard */,
 				795DD207231A03C300A2BEA3 /* Assets.xcassets */,
 				795DD209231A03C300A2BEA3 /* LaunchScreen.storyboard */,
 				795DD20C231A03C300A2BEA3 /* Info.plist */,
@@ -94,6 +95,69 @@
 				795DD217231A03C300A2BEA3 /* Info.plist */,
 			);
 			path = DigitalSpaceTests;
+			sourceTree = "<group>";
+		};
+		795DD220231A03E500A2BEA3 /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Plugins;
+			sourceTree = "<group>";
+		};
+		795DD221231A048C00A2BEA3 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		795DD222231A049200A2BEA3 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				795DD227231A067A00A2BEA3 /* Home */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		795DD223231A04C100A2BEA3 /* Constructor */ = {
+			isa = PBXGroup;
+			children = (
+				795DD200231A03C100A2BEA3 /* AppDelegate.swift */,
+				795DD225231A050400A2BEA3 /* Constructor.swift */,
+			);
+			path = Constructor;
+			sourceTree = "<group>";
+		};
+		795DD224231A04CF00A2BEA3 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				795DD222231A049200A2BEA3 /* Features */,
+				795DD223231A04C100A2BEA3 /* Constructor */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		795DD227231A067A00A2BEA3 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				795DD229231A068B00A2BEA3 /* Controller */,
+				795DD228231A068600A2BEA3 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		795DD228231A068600A2BEA3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		795DD229231A068B00A2BEA3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,7 +243,6 @@
 			files = (
 				795DD20B231A03C300A2BEA3 /* LaunchScreen.storyboard in Resources */,
 				795DD208231A03C300A2BEA3 /* Assets.xcassets in Resources */,
-				795DD206231A03C100A2BEA3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +262,7 @@
 			files = (
 				795DD203231A03C100A2BEA3 /* ViewController.swift in Sources */,
 				795DD201231A03C100A2BEA3 /* AppDelegate.swift in Sources */,
+				795DD226231A050400A2BEA3 /* Constructor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,14 +285,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		795DD204231A03C100A2BEA3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				795DD205231A03C100A2BEA3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		795DD209231A03C300A2BEA3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
