@@ -14,15 +14,16 @@ class CategoryViewCell: UITableViewCell, ConfigurableView {
     var items: [Item]! {
         didSet {
             collectionViewController = ItemsController(items: items)
+            buildViewHierarchy()
+            setupConstraints()
         }
     }
     
-    var collectionViewController = ItemsController()
+    var collectionViewController: ItemsController?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        buildViewHierarchy()
-        setupConstraints()
+       
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -30,11 +31,11 @@ class CategoryViewCell: UITableViewCell, ConfigurableView {
     }
     
     func buildViewHierarchy() {
-        addSubviews([collectionViewController.view])
+        addSubviews([collectionViewController!.view])
     }
     
     func setupConstraints() {
-        collectionViewController.view.cBuild(make: .fillSuperview)
+        collectionViewController!.view.cBuild(make: .fillSuperview)
     }
 }
 

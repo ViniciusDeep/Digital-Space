@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		246DB12AEE0AF267D3420B1D /* Pods_DigitalSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78B28D9D09B555550C45B4B7 /* Pods_DigitalSpace.framework */; };
 		7936CAD2231BDD2E00FD6FDF /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7936CAD1231BDD2E00FD6FDF /* FavoritesController.swift */; };
 		7936CAD5231C3B6E00FD6FDF /* MenuFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7936CAD4231C3B6E00FD6FDF /* MenuFooterView.swift */; };
 		7936CAD7231C4FE400FD6FDF /* HorizontalSnappingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7936CAD6231C4FE400FD6FDF /* HorizontalSnappingController.swift */; };
@@ -37,6 +38,7 @@
 		796ED99D231BB8C800E4BA26 /* MenuOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796ED99C231BB8C800E4BA26 /* MenuOptionCell.swift */; };
 		796ED9A0231BB90200E4BA26 /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796ED99F231BB90200E4BA26 /* MenuOption.swift */; };
 		796ED9A2231BBAE900E4BA26 /* ContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796ED9A1231BBAE900E4BA26 /* ContainerController.swift */; };
+		909E05CF310C153664C4FB37 /* Pods_DigitalSpaceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B14967868B9221BD00291A33 /* Pods_DigitalSpaceTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		100265F018268F3830DD92E1 /* Pods-DigitalSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigitalSpace.release.xcconfig"; path = "Target Support Files/Pods-DigitalSpace/Pods-DigitalSpace.release.xcconfig"; sourceTree = "<group>"; };
+		75DC0BBCA9B49BC8A8D80ECA /* Pods-DigitalSpaceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigitalSpaceTests.debug.xcconfig"; path = "Target Support Files/Pods-DigitalSpaceTests/Pods-DigitalSpaceTests.debug.xcconfig"; sourceTree = "<group>"; };
+		78B28D9D09B555550C45B4B7 /* Pods_DigitalSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigitalSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7936CAD1231BDD2E00FD6FDF /* FavoritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesController.swift; sourceTree = "<group>"; };
 		7936CAD4231C3B6E00FD6FDF /* MenuFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFooterView.swift; sourceTree = "<group>"; };
 		7936CAD6231C4FE400FD6FDF /* HorizontalSnappingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSnappingController.swift; sourceTree = "<group>"; };
@@ -84,6 +89,9 @@
 		796ED99C231BB8C800E4BA26 /* MenuOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOptionCell.swift; sourceTree = "<group>"; };
 		796ED99F231BB90200E4BA26 /* MenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
 		796ED9A1231BBAE900E4BA26 /* ContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerController.swift; sourceTree = "<group>"; };
+		B14967868B9221BD00291A33 /* Pods_DigitalSpaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigitalSpaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B461ABBA26744EF2B0C08042 /* Pods-DigitalSpaceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigitalSpaceTests.release.xcconfig"; path = "Target Support Files/Pods-DigitalSpaceTests/Pods-DigitalSpaceTests.release.xcconfig"; sourceTree = "<group>"; };
+		F30EA6FD88CDF5F5C51E0638 /* Pods-DigitalSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigitalSpace.debug.xcconfig"; path = "Target Support Files/Pods-DigitalSpace/Pods-DigitalSpace.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				246DB12AEE0AF267D3420B1D /* Pods_DigitalSpace.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				909E05CF310C153664C4FB37 /* Pods_DigitalSpaceTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +143,7 @@
 				795DD214231A03C300A2BEA3 /* DigitalSpaceTests */,
 				795DD1FE231A03C100A2BEA3 /* Products */,
 				7EECDED1BFA644190FD0A4F3 /* Pods */,
+				F2DF9BB21E23AEDE25E85BA9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -380,8 +391,21 @@
 		7EECDED1BFA644190FD0A4F3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				F30EA6FD88CDF5F5C51E0638 /* Pods-DigitalSpace.debug.xcconfig */,
+				100265F018268F3830DD92E1 /* Pods-DigitalSpace.release.xcconfig */,
+				75DC0BBCA9B49BC8A8D80ECA /* Pods-DigitalSpaceTests.debug.xcconfig */,
+				B461ABBA26744EF2B0C08042 /* Pods-DigitalSpaceTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F2DF9BB21E23AEDE25E85BA9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				78B28D9D09B555550C45B4B7 /* Pods_DigitalSpace.framework */,
+				B14967868B9221BD00291A33 /* Pods_DigitalSpaceTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,9 +415,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 795DD21A231A03C300A2BEA3 /* Build configuration list for PBXNativeTarget "DigitalSpace" */;
 			buildPhases = (
+				D29CDD1A621E56E039252D74 /* [CP] Check Pods Manifest.lock */,
 				795DD1F9231A03C100A2BEA3 /* Sources */,
 				795DD1FA231A03C100A2BEA3 /* Frameworks */,
 				795DD1FB231A03C100A2BEA3 /* Resources */,
+				5BEA0ED9A6A65749948ED9F1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -408,6 +434,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 795DD21D231A03C300A2BEA3 /* Build configuration list for PBXNativeTarget "DigitalSpaceTests" */;
 			buildPhases = (
+				888477664D4349CF79D47801 /* [CP] Check Pods Manifest.lock */,
 				795DD20D231A03C300A2BEA3 /* Sources */,
 				795DD20E231A03C300A2BEA3 /* Frameworks */,
 				795DD20F231A03C300A2BEA3 /* Resources */,
@@ -478,6 +505,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5BEA0ED9A6A65749948ED9F1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DigitalSpace/Pods-DigitalSpace-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DigitalSpace/Pods-DigitalSpace-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DigitalSpace/Pods-DigitalSpace-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		888477664D4349CF79D47801 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DigitalSpaceTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D29CDD1A621E56E039252D74 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DigitalSpace-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		795DD1F9231A03C100A2BEA3 /* Sources */ = {
@@ -662,6 +753,7 @@
 		};
 		795DD21B231A03C300A2BEA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F30EA6FD88CDF5F5C51E0638 /* Pods-DigitalSpace.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -680,6 +772,7 @@
 		};
 		795DD21C231A03C300A2BEA3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 100265F018268F3830DD92E1 /* Pods-DigitalSpace.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -698,6 +791,7 @@
 		};
 		795DD21E231A03C300A2BEA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75DC0BBCA9B49BC8A8D80ECA /* Pods-DigitalSpaceTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -719,6 +813,7 @@
 		};
 		795DD21F231A03C300A2BEA3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B461ABBA26744EF2B0C08042 /* Pods-DigitalSpaceTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

@@ -23,7 +23,7 @@ class FavoritesController: UITableViewController {
 extension FavoritesController {
     func setupNavigation() {
         navigationItem.title = "Favorites"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic_menu"), landscapeImagePhone: UIImage(named: "ic_menu"), style: .done, target: self, action: #selector(didReceiveMenu))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "arrow_down"), landscapeImagePhone: UIImage(named: "arrow_down"), style: .done, target: self, action: #selector(didReceiveMenu))
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2901960784, green: 0.5647058824, blue: 0.8862745098, alpha: 1), NSAttributedString.Key.font: UIFont(name: "Arial", size: 20)!]
     }
     

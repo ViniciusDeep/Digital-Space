@@ -9,8 +9,25 @@
 import UIKit
 
 class InternalController: UITableViewController {
+    
+    var item: Item?
+    
+    override init(style: UITableView.Style) {
+        super.init(style: style)
+    }
+    
+    convenience init(item: Item) {
+        self.init(style: .grouped)
+        self.item = item
+    } 
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+       
     }
     override func viewWillAppear(_ animated: Bool) {
         setupView()
@@ -29,6 +46,7 @@ extension InternalController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = InternalHeaderView()
         headerView.delegate = self
+        headerView.imageBanner.sd_setHighlightedImage(with: URL(string: item!.galery[0]))
         return headerView
     }
     

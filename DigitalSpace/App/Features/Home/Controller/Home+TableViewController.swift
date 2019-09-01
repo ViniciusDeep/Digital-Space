@@ -41,16 +41,16 @@ extension HomeController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! CategoryViewCell
-        cell.collectionViewController.delegate = self
-       //cell.items = categoryViewModel.categories[indexPath.section].items
-        cell.textLabel?.text = categoryViewModel.categories[indexPath.section].items[indexPath.row].title
+        cell.items = categoryViewModel.categories[indexPath.section].items
+        cell.collectionViewController?.delegate = self
         return cell
     }
 }
 
 extension HomeController: ItemControllerDelegate {
-    func didSelectedItem() {
-        navigationController?.pushViewController(InternalController(), animated: true)
+    func didSelectedItem(item: Item) {
+        let internalController = InternalController(item: item)
+        navigationController?.pushViewController(internalController, animated: true)
     }
 }
 

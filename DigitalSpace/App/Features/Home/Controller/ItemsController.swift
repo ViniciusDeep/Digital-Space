@@ -7,20 +7,27 @@
 //
 
 import UIKit
-
+import SDWebImage
 
 protocol ItemControllerDelegate: class {
-    func didSelectedItem()
+    func didSelectedItem(item: Item)
 }
 
 class ItemsController: HorizontalSnappingController {
    
-    var items = [Item]()
+    var items: [Item]?
+    
+    override init() {
+        super.init()
+    }
     
     convenience init(items: [Item]) {
         self.init()
         self.items = items
-        print(items)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     weak var delegate: ItemControllerDelegate?
@@ -28,17 +35,12 @@ class ItemsController: HorizontalSnappingController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
-        
     }
 }
 
 extension ItemsController: UICollectionViewDelegateFlowLayout {
     
     func setupCollectionView() {
-        DispatchQueue.main.async {
-            self.collectionView.reloadData()
-        }
-        
         collectionView.register(ItemViewCell.self, forCellWithReuseIdentifier: "cellId")
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
@@ -46,7 +48,8 @@ extension ItemsController: UICollectionViewDelegateFlowLayout {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        didSelectedItem()
+        let item = self.items![indexPath.item]
+        didSelectedItem(item: item)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -54,12 +57,17 @@ extension ItemsController: UICollectionViewDelegateFlowLayout {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return self.items?.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! ItemViewCell
         cell.delegate = self
+        cell.titleItem.text = items?[indexPath.row].title
+        cell.descriptionItem.text = items?[indexPath.row].description
+        guard let url = URL(string: items?[indexPath.row].galery[indexPath.row] ?? "") else {return cell}
+        
+        cell.imageBanner.sd_setImage(with: url)
         return cell
     }
     
@@ -68,14 +76,11 @@ extension ItemsController: UICollectionViewDelegateFlowLayout {
 extension ItemsController: ItemViewDelegate {
     func didToItem() {
         print("Go to next")
-        
-        
-        
     }
 }
 
 extension ItemsController {
-    @objc func didSelectedItem() {
-        delegate?.didSelectedItem()
+     func didSelectedItem(item: Item) {
+        delegate?.didSelectedItem(item: item)
     }
 }
