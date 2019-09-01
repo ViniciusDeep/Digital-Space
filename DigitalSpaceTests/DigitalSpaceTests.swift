@@ -11,6 +11,48 @@ import XCTest
 
 class DigitalSpaceTests: XCTestCase {
 
+    func testRepository() {
+        Repository.getAllCategories { (result) in
+            switch result {
+            case .failure(let error):
+                XCTAssertNotNil(error)
+            case .success(let categories):
+                XCTAssertNotNil(categories)
+            }
+        }
+    }
+    
+    
+    func testStubAtViewModel() {
+        _ = CategoryViewModel()
+    }
+    
+    let mainView = UIView(frame: UIScreen.main.bounds)
+    
+    /// Test at subviews
+    func testAddSubViews() {
+        let stubView = UIView(frame: .zero)
+        let scrubView = UIView(frame: .zero)
+        
+        
+        mainView.addSubviews([stubView, scrubView])
+        
+        let subViews = [stubView, scrubView]
+        
+        
+        let subviews = mainView.subviews.map({$0})
+        
+        XCTAssertEqual(subViews, subviews)
+    }
+    
+    func testStaticMethodsConstraintsAtView() {
+        let scrub = UIView()
+        mainView.addSubviews([scrub])
+        scrub.cBuild(make: .fillSuperview)
+        XCTAssertNotNil(scrub.constraints)
+    }
+    
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
