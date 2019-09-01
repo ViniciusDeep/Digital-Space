@@ -48,6 +48,7 @@ class ContainerController: UIViewController {
             menuController = MenuController()
             menuController.delegate = self
             view.insertSubview(menuController.view, at: 0)
+            menuController.view.cBuild(make: .fillSuperview)
             addChild(menuController)
             menuController.didMove(toParent: self)
         }
@@ -75,7 +76,8 @@ class ContainerController: UIViewController {
     func didSelectMenuOption(menuOption: MenuOption) {
         switch menuOption {
         case .Favorites:
-            print("Show favorites")
+            let navigation = UINavigationController(rootViewController: FavoritesController())
+            show(navigation, sender: nil)
         case .Home:
             print("Show Home")
         }

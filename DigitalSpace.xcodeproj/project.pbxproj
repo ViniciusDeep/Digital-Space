@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7936CAD2231BDD2E00FD6FDF /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7936CAD1231BDD2E00FD6FDF /* FavoritesController.swift */; };
 		795DD201231A03C100A2BEA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DD200231A03C100A2BEA3 /* AppDelegate.swift */; };
 		795DD203231A03C100A2BEA3 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DD202231A03C100A2BEA3 /* HomeController.swift */; };
 		795DD208231A03C300A2BEA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 795DD207231A03C300A2BEA3 /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7936CAD1231BDD2E00FD6FDF /* FavoritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesController.swift; sourceTree = "<group>"; };
 		795DD1FD231A03C100A2BEA3 /* DigitalSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitalSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		795DD200231A03C100A2BEA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		795DD202231A03C100A2BEA3 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7936CACF231BDCCE00FD6FDF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7936CAD1231BDD2E00FD6FDF /* FavoritesController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7936CAD0231BDCDB00FD6FDF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7936CAD3231C150200FD6FDF /* CoreDao */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreDao;
+			sourceTree = "<group>";
+		};
 		795DD1F4231A03C100A2BEA3 = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +280,7 @@
 		795DD230231A088B00A2BEA3 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				7936CAD3231C150200FD6FDF /* CoreDao */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -298,6 +323,8 @@
 		795DD251231AD36C00A2BEA3 /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
+				7936CAD0231BDCDB00FD6FDF /* View */,
+				7936CACF231BDCCE00FD6FDF /* Controller */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -453,6 +480,7 @@
 			files = (
 				795DD203231A03C100A2BEA3 /* HomeController.swift in Sources */,
 				796ED99D231BB8C800E4BA26 /* MenuOptionCell.swift in Sources */,
+				7936CAD2231BDD2E00FD6FDF /* FavoritesController.swift in Sources */,
 				795DD23A231A0DDA00A2BEA3 /* Item.swift in Sources */,
 				795DD23D231A100D00A2BEA3 /* CategoryViewModel.swift in Sources */,
 				796ED9A0231BB90200E4BA26 /* MenuOption.swift in Sources */,

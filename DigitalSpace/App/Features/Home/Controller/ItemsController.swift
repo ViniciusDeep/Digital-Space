@@ -35,7 +35,7 @@ class ItemsController: BaseCollectionController {
 extension ItemsController: UICollectionViewDelegateFlowLayout {
     
     func setupCollectionView() {
-        
+        collectionView.isPagingEnabled = true
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }

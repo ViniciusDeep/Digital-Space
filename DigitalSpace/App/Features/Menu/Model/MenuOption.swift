@@ -19,12 +19,5 @@ enum MenuOption: Int, CustomStringConvertible {
         case .Favorites: return "Favorites"
         }
     }
-    
-    var image: UIImage {
-        switch self {
-        case .Home: return UIImage(named: "ic_person_outline_white_2x") ?? UIImage()
-        case .Favorites: return UIImage(named: "ic_mail_outline_white_2x") ?? UIImage()
-        }
-    }
 }
 
