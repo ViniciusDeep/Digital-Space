@@ -71,16 +71,11 @@ class ContainerController: UIViewController {
                 blurEffectView.removeFromSuperview()
                 self.centerController.view.frame.origin.x = 0
                 blurEffectView.removeFromSuperview()
-                
-                
-                
                 for view in self.centerController.view.subviews {
                     if view.alpha == blurEffectView.alpha {
                         view.removeFromSuperview()
                     }
                 }
-                
-                
             }) { (_) in
                 guard let menuOption = menuOption else { return }
                 self.didSelectMenuOption(menuOption: menuOption)

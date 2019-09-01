@@ -13,7 +13,7 @@ protocol ItemControllerDelegate: class {
     func didSelectedItem()
 }
 
-class ItemsController: BaseCollectionController {
+class ItemsController: HorizontalSnappingController {
    
     var items = [Item]()
     
@@ -35,7 +35,6 @@ class ItemsController: BaseCollectionController {
 extension ItemsController: UICollectionViewDelegateFlowLayout {
     
     func setupCollectionView() {
-        collectionView.isPagingEnabled = true
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }
