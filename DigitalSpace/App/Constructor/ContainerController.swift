@@ -31,8 +31,6 @@ class ContainerController: UIViewController {
         return isExpanded
     }
     
-    // MARK: - Handlers
-    
     func configureHomeController() {
         let homeController = HomeController()
         homeController.delegate = self
@@ -56,17 +54,38 @@ class ContainerController: UIViewController {
     
     func animatePanel(shouldExpand: Bool, menuOption: MenuOption?) {
         
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.centerController.view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        blurEffectView.alpha = 1.1
+        
         if shouldExpand {
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
                 self.centerController.view.frame.origin.x = self.centerController.view.frame.origin.x - 300
+                self.centerController.view.addSubview(blurEffectView)
             }, completion: nil)
             
         } else {
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+                blurEffectView.removeFromSuperview()
                 self.centerController.view.frame.origin.x = 0
+                blurEffectView.removeFromSuperview()
+                
+                
+                
+                for view in self.centerController.view.subviews {
+                    if view.alpha == blurEffectView.alpha {
+                        view.removeFromSuperview()
+                    }
+                }
+                
+                
             }) { (_) in
                 guard let menuOption = menuOption else { return }
                 self.didSelectMenuOption(menuOption: menuOption)
+                blurEffectView.removeFromSuperview()
+
             }
         }
         

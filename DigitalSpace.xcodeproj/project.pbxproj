@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7936CAD2231BDD2E00FD6FDF /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7936CAD1231BDD2E00FD6FDF /* FavoritesController.swift */; };
+		7936CAD5231C3B6E00FD6FDF /* MenuFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7936CAD4231C3B6E00FD6FDF /* MenuFooterView.swift */; };
 		795DD201231A03C100A2BEA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DD200231A03C100A2BEA3 /* AppDelegate.swift */; };
 		795DD203231A03C100A2BEA3 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DD202231A03C100A2BEA3 /* HomeController.swift */; };
 		795DD208231A03C300A2BEA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 795DD207231A03C300A2BEA3 /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		7936CAD1231BDD2E00FD6FDF /* FavoritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesController.swift; sourceTree = "<group>"; };
+		7936CAD4231C3B6E00FD6FDF /* MenuFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFooterView.swift; sourceTree = "<group>"; };
 		795DD1FD231A03C100A2BEA3 /* DigitalSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitalSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		795DD200231A03C100A2BEA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		795DD202231A03C100A2BEA3 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 			isa = PBXGroup;
 			children = (
 				796ED99C231BB8C800E4BA26 /* MenuOptionCell.swift */,
+				7936CAD4231C3B6E00FD6FDF /* MenuFooterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7936CAD5231C3B6E00FD6FDF /* MenuFooterView.swift in Sources */,
 				795DD203231A03C100A2BEA3 /* HomeController.swift in Sources */,
 				796ED99D231BB8C800E4BA26 /* MenuOptionCell.swift in Sources */,
 				7936CAD2231BDD2E00FD6FDF /* FavoritesController.swift in Sources */,
