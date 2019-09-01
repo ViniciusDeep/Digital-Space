@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol ItemViewDelegate: class {
+    func didToItem()
+}
+
+
 class ItemViewCell: UICollectionViewCell, ConfigurableView {
   
     let imageBanner: UIImageView = {
@@ -35,6 +40,22 @@ class ItemViewCell: UICollectionViewCell, ConfigurableView {
         return label
     }()
     
+    lazy var previousItem: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "arrow_left"), for: .normal)
+        button.addTarget(self, action: #selector(didToItem), for: .touchUpInside)
+        return button
+    }()
+    
+    lazy var nextItem: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "arrow_right"), for: .normal)
+        button.addTarget(self, action: #selector(didToItem), for: .touchUpInside)
+        return button
+    }()
+    
+    weak var delegate: ItemViewDelegate?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         buildViewHierarchy()
@@ -46,20 +67,40 @@ class ItemViewCell: UICollectionViewCell, ConfigurableView {
     }
     
     func buildViewHierarchy() {
-        addSubviews([imageBanner, titleItem, descriptionItem])
+        addSubviews([imageBanner, titleItem, descriptionItem, previousItem, nextItem])
     }
     
     func setupConstraints() {
         imageBanner.cBuild(make: .fillSuperview)
         
         titleItem.cBuilder {
-            $0.top.equal(to: imageBanner.topAnchor, offsetBy: self.frame.height / 2 + 30)
+            $0.top.equal(to: imageBanner.topAnchor, offsetBy: self.frame.height / 2 + 40)
+            $0.leading.equal(to: leadingAnchor, offsetBy: 10)
         }
         
         descriptionItem.cBuilder {
             $0.top.equal(to: titleItem.bottomAnchor, offsetBy: 10)
+            $0.leading.equal(to: leadingAnchor, offsetBy: 10)
+            $0.trailing.equal(to: trailingAnchor, offsetBy: -10)
         }
         
+        previousItem.cBuild(make: .centerYInSuperView)
+        
+        previousItem.cBuilder {
+            $0.leading.equal(to: leadingAnchor, offsetBy: 10)
+        }
+        
+        
+        nextItem.cBuild(make: .centerYInSuperView)
+        
+        nextItem.cBuilder {
+            $0.trailing.equal(to: trailingAnchor, offsetBy: -10)
+        }
     }
+}
 
+extension ItemViewCell {
+    @objc func didToItem() {
+        delegate?.didToItem()
+    }
 }

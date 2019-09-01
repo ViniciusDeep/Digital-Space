@@ -11,11 +11,11 @@ import UIKit
 class CategoryViewCell: UITableViewCell, ConfigurableView {
     
     
-//    var items: [Item]! {
-//        didSet {
-//            collectionViewController = ItemsController(items: items)
-//        }
-//    }
+    var items: [Item]! {
+        didSet {
+            collectionViewController = ItemsController(items: items)
+        }
+    }
     
     var collectionViewController = ItemsController()
     

@@ -8,10 +8,21 @@
 
 import UIKit
 
-class MenunController: UITableViewController {
+class MenuController: UITableViewController {
+    
+    let sections = ["Home", "Favorite"]
+    
+    weak var delegate: HomeControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = #colorLiteral(red: 0.262745098, green: 0.262745098, blue: 0.262745098, alpha: 1)
+        tableView.separatorStyle = .none
     }
+}
+
+extension MenuController {
+   
+    
     
 }

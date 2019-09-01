@@ -26,7 +26,7 @@ extension HomeController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 250
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -42,7 +42,7 @@ extension HomeController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! CategoryViewCell
         cell.collectionViewController.delegate = self
-    //cell.items = categoryViewModel.categories[indexPath.section].items
+      //  cell.items = categoryViewModel.categories[indexPath.section].items
         cell.textLabel?.text = categoryViewModel.categories[indexPath.section].items[indexPath.row].title
         return cell
     }

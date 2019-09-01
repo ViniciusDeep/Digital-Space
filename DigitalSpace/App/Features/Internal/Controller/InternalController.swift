@@ -55,6 +55,6 @@ extension InternalController: InternalHeaderViewDelegate {
     }
     
     func didStarTapped() {
-        //Action Here
+        //Action Here to save in Core Data the favorites
     }
 }

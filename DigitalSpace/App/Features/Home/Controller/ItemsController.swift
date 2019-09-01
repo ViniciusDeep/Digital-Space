@@ -28,12 +28,18 @@ class ItemsController: BaseCollectionController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+        
     }
 }
 
 extension ItemsController: UICollectionViewDelegateFlowLayout {
     
     func setupCollectionView() {
+        
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+        
         collectionView.register(ItemViewCell.self, forCellWithReuseIdentifier: "cellId")
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
             layout.scrollDirection = .horizontal
@@ -54,9 +60,19 @@ extension ItemsController: UICollectionViewDelegateFlowLayout {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! ItemViewCell
+        cell.delegate = self
         return cell
     }
     
+}
+
+extension ItemsController: ItemViewDelegate {
+    func didToItem() {
+        print("Go to next")
+        
+        
+        
+    }
 }
 
 extension ItemsController {

@@ -8,9 +8,16 @@
 
 import UIKit
 
+
+protocol HomeControllerDelegate: class {
+    func handleMenuToggle(forMenuOption menuOption: MenuOption?)
+}
+
 class HomeController: UITableViewController {
 
     var categoryViewModel = CategoryViewModel()
+    
+    weak var delegate: HomeControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +26,7 @@ class HomeController: UITableViewController {
         setupNavigation()
         bindViewModel()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = false
     }
@@ -33,7 +41,7 @@ class HomeController: UITableViewController {
     }
     
     @objc func didReceiveMenu() {
-        print("Toogle Menu")
+        delegate?.handleMenuToggle(forMenuOption: nil)
     }
 }
 

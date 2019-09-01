@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -31,6 +31,9 @@
 		795DD256231ADBEF00A2BEA3 /* InternalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DD255231ADBEF00A2BEA3 /* InternalController.swift */; };
 		795DD258231AE3BA00A2BEA3 /* InternalHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DD257231AE3BA00A2BEA3 /* InternalHeaderView.swift */; };
 		795DD25A231AEB8000A2BEA3 /* InternalViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DD259231AEB8000A2BEA3 /* InternalViewCell.swift */; };
+		796ED99D231BB8C800E4BA26 /* MenuOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796ED99C231BB8C800E4BA26 /* MenuOptionCell.swift */; };
+		796ED9A0231BB90200E4BA26 /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796ED99F231BB90200E4BA26 /* MenuOption.swift */; };
+		796ED9A2231BBAE900E4BA26 /* ContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796ED9A1231BBAE900E4BA26 /* ContainerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,9 @@
 		795DD255231ADBEF00A2BEA3 /* InternalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalController.swift; sourceTree = "<group>"; };
 		795DD257231AE3BA00A2BEA3 /* InternalHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalHeaderView.swift; sourceTree = "<group>"; };
 		795DD259231AEB8000A2BEA3 /* InternalViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalViewCell.swift; sourceTree = "<group>"; };
+		796ED99C231BB8C800E4BA26 /* MenuOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOptionCell.swift; sourceTree = "<group>"; };
+		796ED99F231BB90200E4BA26 /* MenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
+		796ED9A1231BBAE900E4BA26 /* ContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,7 @@
 				795DD1FF231A03C100A2BEA3 /* DigitalSpace */,
 				795DD214231A03C300A2BEA3 /* DigitalSpaceTests */,
 				795DD1FE231A03C100A2BEA3 /* Products */,
+				7EECDED1BFA644190FD0A4F3 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,6 +175,7 @@
 			children = (
 				795DD200231A03C100A2BEA3 /* AppDelegate.swift */,
 				795DD225231A050400A2BEA3 /* Constructor.swift */,
+				796ED9A1231BBAE900E4BA26 /* ContainerController.swift */,
 			);
 			path = Constructor;
 			sourceTree = "<group>";
@@ -272,6 +280,8 @@
 		795DD24D231ACA0400A2BEA3 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				796ED99E231BB8F500E4BA26 /* Model */,
+				796ED99B231BB8B700E4BA26 /* View */,
 				795DD24E231ACB1100A2BEA3 /* Controller */,
 			);
 			path = Menu;
@@ -316,6 +326,29 @@
 				795DD259231AEB8000A2BEA3 /* InternalViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		796ED99B231BB8B700E4BA26 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				796ED99C231BB8C800E4BA26 /* MenuOptionCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		796ED99E231BB8F500E4BA26 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				796ED99F231BB90200E4BA26 /* MenuOption.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7EECDED1BFA644190FD0A4F3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,14 +452,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				795DD203231A03C100A2BEA3 /* HomeController.swift in Sources */,
+				796ED99D231BB8C800E4BA26 /* MenuOptionCell.swift in Sources */,
 				795DD23A231A0DDA00A2BEA3 /* Item.swift in Sources */,
 				795DD23D231A100D00A2BEA3 /* CategoryViewModel.swift in Sources */,
+				796ED9A0231BB90200E4BA26 /* MenuOption.swift in Sources */,
 				795DD236231A099600A2BEA3 /* Service.swift in Sources */,
 				795DD258231AE3BA00A2BEA3 /* InternalHeaderView.swift in Sources */,
 				795DD25A231AEB8000A2BEA3 /* InternalViewCell.swift in Sources */,
 				795DD24A231AB2E400A2BEA3 /* ItemsController.swift in Sources */,
 				795DD22C231A084D00A2BEA3 /* ConfigurableView.swift in Sources */,
 				795DD23F231A113200A2BEA3 /* Repository.swift in Sources */,
+				796ED9A2231BBAE900E4BA26 /* ContainerController.swift in Sources */,
 				795DD24C231AB70900A2BEA3 /* ItemViewCell.swift in Sources */,
 				795DD247231AB29900A2BEA3 /* BaseCollectionController.swift in Sources */,
 				795DD243231AAAB600A2BEA3 /* CategoryViewCell.swift in Sources */,

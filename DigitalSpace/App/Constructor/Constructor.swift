@@ -8,8 +8,6 @@
 
 import UIKit
 
-import UIKit
-
 protocol ConfigurableConstructor {
     mutating func setupConstructor()
 }
@@ -23,7 +21,9 @@ struct Constructor: ConfigurableConstructor {
     
     mutating func setupConstructor() {
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UINavigationController(rootViewController: HomeController())
+        window?.rootViewController = ContainerController()
+        
+        
         window?.makeKeyAndVisible()
     }
 }
