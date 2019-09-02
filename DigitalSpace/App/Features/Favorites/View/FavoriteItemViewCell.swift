@@ -1,19 +1,19 @@
 //
-//  ItemViewCell.swift
+//  FavoriteItemViewCell.swift
 //  DigitalSpace
 //
-//  Created by Vinicius Mangueira on 31/08/19.
+//  Created by Vinicius Mangueira on 02/09/19.
 //  Copyright © 2019 Vinicius Mangueira. All rights reserved.
 //
 
 import UIKit
 
-protocol ItemViewDelegate: class {
+protocol FavoriteItemViewCellDelegate: class {
     func didToItem()
 }
 
-class ItemViewCell: UICollectionViewCell, ConfigurableView {
-  
+class FavoriteItemViewCell: UICollectionViewCell, ConfigurableView {
+    
     let imageBanner: UIImageView = {
         let image = UIImageView(image: UIImage(named: "placeholder"))
         image.contentMode = UIView.ContentMode.scaleAspectFit
@@ -53,7 +53,7 @@ class ItemViewCell: UICollectionViewCell, ConfigurableView {
         return button
     }()
     
-    weak var delegate: ItemViewDelegate?
+    weak var delegate: FavoriteItemViewCellDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -98,8 +98,9 @@ class ItemViewCell: UICollectionViewCell, ConfigurableView {
     }
 }
 
-extension ItemViewCell {
+extension FavoriteItemViewCell {
     @objc func didToItem() {
         delegate?.didToItem()
     }
 }
+

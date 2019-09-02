@@ -22,8 +22,6 @@ struct Constructor: ConfigurableConstructor {
     mutating func setupConstructor() {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = ContainerController()
-        
-        
         window?.makeKeyAndVisible()
     }
 }

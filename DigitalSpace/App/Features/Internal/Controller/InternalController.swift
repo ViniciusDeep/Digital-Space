@@ -17,7 +17,7 @@ class InternalController: UITableViewController {
     }
     
     convenience init(item: Item) {
-        self.init(style: .grouped)
+        self.init(style: .plain)
         self.item = item
     } 
     
@@ -46,7 +46,8 @@ extension InternalController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = InternalHeaderView()
         headerView.delegate = self
-        headerView.imageBanner.sd_setHighlightedImage(with: URL(string: item!.galery[0]))
+        headerView.title.text = item?.title
+        headerView.imageBanner.sd_setImage(with: URL(string: item?.galery[section] ?? ""))
         return headerView
     }
     
@@ -59,8 +60,8 @@ extension InternalController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! InternalViewCell
+        cell.documentation.text = item?.description
         return cell
     }
     
@@ -73,6 +74,12 @@ extension InternalController: InternalHeaderViewDelegate {
     }
     
     func didStarTapped() {
-        //Action Here to save in Core Data the favorites
+        let coreDao = CoreDao<FavoriteItem>(with: "FavoriteItem")
+        
+        let itemFavor = coreDao.new()
+        itemFavor.about = item?.description
+        itemFavor.gallery = item?.galery[0]
+        itemFavor.title = self.item?.title
+        coreDao.insert(object: itemFavor)
     }
 }
