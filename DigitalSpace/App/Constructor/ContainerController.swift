@@ -90,7 +90,7 @@ class ContainerController: UIViewController {
     func didSelectMenuOption(menuOption: MenuOption) {
         switch menuOption {
         case .Favorites:
-            let navigation = UINavigationController(rootViewController: FavoritesController())
+            let navigation = UINavigationController(rootViewController: FavoritesController(style: .plain))
             show(navigation, sender: nil)
         case .Home:
             print("Show Home")

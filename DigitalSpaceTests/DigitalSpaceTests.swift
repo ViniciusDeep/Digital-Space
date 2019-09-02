@@ -24,7 +24,15 @@ class DigitalSpaceTests: XCTestCase {
     
     
     func testStubAtViewModel() {
-        _ = CategoryViewModel()
+        var categorieVm = CategoryViewModel()
+        
+        categorieVm.fetchCategories { (categories) in
+            XCTAssertNotNil(categories)
+            categorieVm.categories = categories
+        }
+        
+       XCTAssertNotNil(categorieVm.categories)
+        
     }
     
     let mainView = UIView(frame: UIScreen.main.bounds)
@@ -51,6 +59,14 @@ class DigitalSpaceTests: XCTestCase {
         scrub.cBuild(make: .fillSuperview)
         XCTAssertNotNil(scrub.constraints)
     }
+    
+    func testStubAtConstructor() {
+        var constructor = Constructor()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        constructor.setupConstructor()
+        XCTAssertEqual(constructor.window?.frame, appDelegate.window?.frame)
+    }
+    
     
     
     override func setUp() {

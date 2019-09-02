@@ -12,11 +12,23 @@ class FavoritesController: UITableViewController {
     
     weak var delegate: HomeControllerDelegate?
     
+    var favorites = [FavoriteItem]()
+    
+    override init(style: UITableView.Style) {
+        super.init(style: .plain)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         setupTableView()
         setupNavigation()
+        let coreDao = CoreDao<FavoriteItem>(with: "FavoriteItem")
+        favorites = coreDao.fetchAll()
     }
 }
 
@@ -29,12 +41,12 @@ extension FavoritesController {
     
     
     func setupTableView() {
-        tableView.register(CategoryViewCell.self, forCellReuseIdentifier: "cellId")
+        tableView.register(FavoritesViewCell.self, forCellReuseIdentifier: "cellId")
         tableView.separatorStyle = .none
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return favorites.count
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -48,8 +60,8 @@ extension FavoritesController {
     
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! CategoryViewCell
-        //  cell.items = categoryViewModel.categories[indexPath.section].items
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! FavoritesViewCell
+        cell.collectionViewController = ItemFavoriteController()
         return cell
     }
 
