@@ -61,7 +61,7 @@ extension FavoritesController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! FavoritesViewCell
-        cell.collectionViewController = ItemFavoriteController()
+        cell.items = self.favorites
         return cell
     }
 
