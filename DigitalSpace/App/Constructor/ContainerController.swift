@@ -54,6 +54,11 @@ class ContainerController: UIViewController {
     
     @objc func didDismissAtPan() {
         self.handleMenuToggle(forMenuOption: .Home)
+        
+        for gesture in self.centerController.view!.gestureRecognizers! {
+            self.centerController.view.removeGestureRecognizer(gesture)
+        }
+        
     }
     
     func animatePanel(shouldExpand: Bool, menuOption: MenuOption?) {
@@ -69,9 +74,6 @@ class ContainerController: UIViewController {
                 self.centerController.view.frame.origin.x = self.centerController.view.frame.origin.x - 300
                 self.centerController.view.addSubview(blurEffectView)
                 self.centerController.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.didDismissAtPan)))
-                
-
-                
             }, completion: nil)
             
         } else {
