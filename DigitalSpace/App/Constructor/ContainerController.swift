@@ -74,6 +74,8 @@ class ContainerController: UIViewController {
                 self.centerController.view.frame.origin.x = self.centerController.view.frame.origin.x - 300
                 self.centerController.view.addSubview(blurEffectView)
                 self.centerController.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.didDismissAtPan)))
+                let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.didDismissAtPan))
+                self.menuController.view!.addGestureRecognizer(swipeLeft)
             }, completion: nil)
             
         } else {

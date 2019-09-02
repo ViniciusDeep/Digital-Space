@@ -57,31 +57,3 @@ struct Service<T: Decodable> {
         }
     }
 }
-
-
-class Network {
-    static let shared = Network()
-    func fetchCategories(url: String, completion: @escaping ([Category], Error?) -> () ) {
-        let urlString = url
-        let urlSession = URLSession.shared
-        guard let url = URL(string: urlString) else {return}
-        
-        urlSession.dataTask(with: url) { (data, response, error) in
-            guard let data = data else {return}
-            
-            if let error = error {
-                print("Failed to fetch apps", error)
-                completion([], error)
-                return
-            }
-            do {
-                let searchResult = try JSONDecoder().decode([Category].self, from: data)
-                completion(searchResult, nil)
-                
-            } catch let jsonError{
-                print("Failed to decode JSON:", jsonError)
-                completion([], jsonError)
-            }
-            }.resume()
-    }
-}

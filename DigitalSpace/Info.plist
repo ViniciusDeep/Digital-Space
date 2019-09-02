@@ -8,7 +8,7 @@
 		<true/>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>lorempixel.com</key>
+			<key>lorempixel.com/</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
 				<true/>
