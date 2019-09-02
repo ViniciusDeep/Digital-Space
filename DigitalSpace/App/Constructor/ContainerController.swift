@@ -52,6 +52,10 @@ class ContainerController: UIViewController {
         }
     }
     
+    @objc func didDismissAtPan() {
+        self.handleMenuToggle(forMenuOption: .Home)
+    }
+    
     func animatePanel(shouldExpand: Bool, menuOption: MenuOption?) {
         
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
@@ -64,6 +68,10 @@ class ContainerController: UIViewController {
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
                 self.centerController.view.frame.origin.x = self.centerController.view.frame.origin.x - 300
                 self.centerController.view.addSubview(blurEffectView)
+                self.centerController.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.didDismissAtPan)))
+                
+
+                
             }, completion: nil)
             
         } else {
@@ -114,4 +122,5 @@ extension ContainerController: HomeControllerDelegate {
         animatePanel(shouldExpand: isExpanded, menuOption: menuOption)
     }
 }
+
 

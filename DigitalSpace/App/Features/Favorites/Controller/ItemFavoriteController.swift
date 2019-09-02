@@ -63,7 +63,7 @@ extension ItemFavoriteController: UICollectionViewDelegateFlowLayout {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! FavoriteItemViewCell
         cell.delegate = self
         cell.titleItem.text = items?[indexPath.row].title
-        cell.descriptionItem.text = items?[indexPath.row].description
+        cell.descriptionItem.text = items?[indexPath.row].about
         guard let url = URL(string: items?[indexPath.row].gallery ?? "") else {return cell}
         cell.imageBanner.sd_setImage(with: url)
         return cell
