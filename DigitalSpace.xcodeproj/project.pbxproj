@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		246DB12AEE0AF267D3420B1D /* Pods_DigitalSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78B28D9D09B555550C45B4B7 /* Pods_DigitalSpace.framework */; };
 		790D8232231C9D530083174A /* FavoritesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790D8231231C9D530083174A /* FavoritesViewCell.swift */; };
+		79208054231E74F8008248B7 /* FavoriteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79208053231E74F8008248B7 /* FavoriteRepository.swift */; };
+		79208057231E7584008248B7 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79208056231E7584008248B7 /* FavoritesViewModel.swift */; };
+		7920805A231E78FC008248B7 /* StretchyHeaderLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79208059231E78FC008248B7 /* StretchyHeaderLayout.swift */; };
 		7936CAD2231BDD2E00FD6FDF /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7936CAD1231BDD2E00FD6FDF /* FavoritesController.swift */; };
 		7936CAD5231C3B6E00FD6FDF /* MenuFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7936CAD4231C3B6E00FD6FDF /* MenuFooterView.swift */; };
 		7936CAD7231C4FE400FD6FDF /* HorizontalSnappingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7936CAD6231C4FE400FD6FDF /* HorizontalSnappingController.swift */; };
@@ -66,6 +69,9 @@
 		75DC0BBCA9B49BC8A8D80ECA /* Pods-DigitalSpaceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigitalSpaceTests.debug.xcconfig"; path = "Target Support Files/Pods-DigitalSpaceTests/Pods-DigitalSpaceTests.debug.xcconfig"; sourceTree = "<group>"; };
 		78B28D9D09B555550C45B4B7 /* Pods_DigitalSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigitalSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		790D8231231C9D530083174A /* FavoritesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewCell.swift; sourceTree = "<group>"; };
+		79208053231E74F8008248B7 /* FavoriteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepository.swift; sourceTree = "<group>"; };
+		79208056231E7584008248B7 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		79208059231E78FC008248B7 /* StretchyHeaderLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderLayout.swift; sourceTree = "<group>"; };
 		7936CAD1231BDD2E00FD6FDF /* FavoritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesController.swift; sourceTree = "<group>"; };
 		7936CAD4231C3B6E00FD6FDF /* MenuFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFooterView.swift; sourceTree = "<group>"; };
 		7936CAD6231C4FE400FD6FDF /* HorizontalSnappingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSnappingController.swift; sourceTree = "<group>"; };
@@ -134,6 +140,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		79208051231E74DB008248B7 /* Definer */ = {
+			isa = PBXGroup;
+			children = (
+				79208055231E7572008248B7 /* ViewModel */,
+				79208052231E74E9008248B7 /* Repository */,
+			);
+			path = Definer;
+			sourceTree = "<group>";
+		};
+		79208052231E74E9008248B7 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				79208053231E74F8008248B7 /* FavoriteRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		79208055231E7572008248B7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				79208056231E7584008248B7 /* FavoritesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		79208058231E78EE008248B7 /* Animate */ = {
+			isa = PBXGroup;
+			children = (
+				79208059231E78FC008248B7 /* StretchyHeaderLayout.swift */,
+			);
+			path = Animate;
+			sourceTree = "<group>";
+		};
 		7936CACF231BDCCE00FD6FDF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +330,7 @@
 		795DD22A231A081800A2BEA3 /* ReusableLayer */ = {
 			isa = PBXGroup;
 			children = (
+				79208058231E78EE008248B7 /* Animate */,
 				795DD248231AB2A000A2BEA3 /* Controller */,
 				795DD22D231A087200A2BEA3 /* Protocol */,
 			);
@@ -369,6 +409,7 @@
 		795DD251231AD36C00A2BEA3 /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
+				79208051231E74DB008248B7 /* Definer */,
 				7936CAD0231BDCDB00FD6FDF /* View */,
 				7936CACF231BDCCE00FD6FDF /* Controller */,
 			);
@@ -615,6 +656,7 @@
 			files = (
 				7936CAD5231C3B6E00FD6FDF /* MenuFooterView.swift in Sources */,
 				795DD203231A03C100A2BEA3 /* HomeController.swift in Sources */,
+				7920805A231E78FC008248B7 /* StretchyHeaderLayout.swift in Sources */,
 				796ED99D231BB8C800E4BA26 /* MenuOptionCell.swift in Sources */,
 				797AFB29231D23C500384EAC /* CoreStack.swift in Sources */,
 				7936CAD2231BDD2E00FD6FDF /* FavoritesController.swift in Sources */,
@@ -625,7 +667,9 @@
 				795DD258231AE3BA00A2BEA3 /* InternalHeaderView.swift in Sources */,
 				797AFB2F231D23E800384EAC /* NSManajedObject+Extension.swift in Sources */,
 				797AFB2D231D23DB00384EAC /* ConfigurableDao.swift in Sources */,
+				79208057231E7584008248B7 /* FavoritesViewModel.swift in Sources */,
 				797AFB32231D245900384EAC /* FavoriteItem.xcdatamodeld in Sources */,
+				79208054231E74F8008248B7 /* FavoriteRepository.swift in Sources */,
 				795DD25A231AEB8000A2BEA3 /* InternalViewCell.swift in Sources */,
 				795DD24A231AB2E400A2BEA3 /* ItemsController.swift in Sources */,
 				797AFB3F231D254900384EAC /* FavoriteItem+Extension.swift in Sources */,

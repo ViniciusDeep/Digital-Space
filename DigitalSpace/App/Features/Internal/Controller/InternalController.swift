@@ -12,6 +12,8 @@ class InternalController: UITableViewController {
     
     var item: Item?
     
+    let headerView = InternalHeaderView()
+    
     override init(style: UITableView.Style) {
         super.init(style: style)
     }
@@ -32,6 +34,21 @@ class InternalController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         setupView()
     }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffsetY = scrollView.contentOffset.y
+        print(contentOffsetY)
+        
+        if contentOffsetY > 0 {
+            headerView.animator.fractionComplete = 0
+            return
+        }
+        
+        headerView.animator.fractionComplete = abs(contentOffsetY) / 100
+    }
+    
+    
+    
 }
 
 extension InternalController {
@@ -44,7 +61,6 @@ extension InternalController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = InternalHeaderView()
         headerView.delegate = self
         headerView.title.text = item?.title
         headerView.imageBanner.sd_setImage(with: URL(string: item?.galery[section] ?? ""))

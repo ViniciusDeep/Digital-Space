@@ -12,7 +12,7 @@ class FavoritesController: UITableViewController {
     
     weak var delegate: HomeControllerDelegate?
     
-    var favorites = [FavoriteItem]()
+    var favoritesViewModel = FavoritesViewModel()
     
     override init(style: UITableView.Style) {
         super.init(style: .plain)
@@ -27,8 +27,7 @@ class FavoritesController: UITableViewController {
         self.view.backgroundColor = .white
         setupTableView()
         setupNavigation()
-        let coreDao = CoreDao<FavoriteItem>(with: "FavoriteItem")
-        favorites = coreDao.fetchAll()
+        favoritesViewModel.bindFavorites()
     }
 }
 
@@ -46,7 +45,7 @@ extension FavoritesController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return favorites.count
+        return favoritesViewModel.favorites.count
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -61,7 +60,7 @@ extension FavoritesController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! FavoritesViewCell
-        cell.items = self.favorites
+        cell.items = self.favoritesViewModel.favorites
         return cell
     }
 
