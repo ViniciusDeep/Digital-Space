@@ -34,21 +34,6 @@ class InternalController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         setupView()
     }
-    
-    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let contentOffsetY = scrollView.contentOffset.y
-        print(contentOffsetY)
-        
-        if contentOffsetY > 0 {
-            headerView.animator.fractionComplete = 0
-            return
-        }
-        
-        headerView.animator.fractionComplete = abs(contentOffsetY) / 100
-    }
-    
-    
-    
 }
 
 extension InternalController {

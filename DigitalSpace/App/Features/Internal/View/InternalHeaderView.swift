@@ -15,7 +15,7 @@ protocol InternalHeaderViewDelegate: class {
 
 class InternalHeaderView: UIView, ConfigurableView {
     
-    var animator: UIViewPropertyAnimator!
+    
     
     let imageBanner: UIImageView = {
         let image = UIImageView(image: UIImage(named: "placeholder"))
@@ -60,9 +60,6 @@ class InternalHeaderView: UIView, ConfigurableView {
         self.backgroundColor = .white
         buildViewHierarchy()
         setupConstraints()
-        
-        setupVisualEffectBlur()
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -70,17 +67,6 @@ class InternalHeaderView: UIView, ConfigurableView {
     }
     
     
-    fileprivate func setupVisualEffectBlur() {
-        animator = UIViewPropertyAnimator(duration: 3.0, curve: .linear, animations: { [weak self] in
-            
-            
-            let blurEffect = UIBlurEffect(style: .regular)
-            let visualEffectView = UIVisualEffectView(effect: blurEffect)
-            
-            self?.addSubview(visualEffectView)
-            visualEffectView.cBuild(make: .fillSuperview)
-        })
-    }
 
     
     func buildViewHierarchy() {
